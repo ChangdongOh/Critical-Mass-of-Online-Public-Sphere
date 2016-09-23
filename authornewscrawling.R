@@ -6,9 +6,8 @@ library(dplyr)
 authorname=read.csv("authorname.csv",header=F, stringsAsFactors = F)[,1]
 authornamelist=read.csv("authorname.csv",header=F, stringsAsFactors = F)[,2]
 
-
+a=1
 for(i in authornamelist){
-  a=1
   dataframe=as.data.frame(matrix(ncol=4),stringsAsFactors = F)
   dataframe<-dataframe[-1,]
   searchurl=paste0('http://news.naver.com/main/search/search.nhn?query=','%BC%D2%BC%B3%B0%A1+',i,'&st=news.all&q_enc=EUC-KR&r_enc=UTF-8&r_format=xml&rp=none&sm=all.basic&ic=all&so=rel.dsc&rcnews=exist:032:020:023:025:028:038:469:&rcsection=exist:&stDate=range:20000101:20101231&detail=0&pd=4&r_cluster2_start=1&r_cluster2_display=10&start=1&display=10&startDate=2000-01-01&endDate=2010-12-31&page=')
