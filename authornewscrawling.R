@@ -30,6 +30,7 @@ for(i in authornamelist){
       date=str_extract(html_text(html_nodes(newspage,'span.t11')),'\\d+-\\d+-\\d+')[1]
       #최초 기사 올라온 시간만 남기고 나머지 제거
       article=html_text(html_nodes(newspage,'#articleBodyContents'))
+      new<-data.frame(title, date, press, article,stringsAsFactors=F)
       dataframe<-rbind(dataframe, new)
     }
   }
