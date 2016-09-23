@@ -6,7 +6,6 @@ library(dplyr)
 authorname=read.csv("authorname.csv",header=F, stringsAsFactors = F)[,1]
 authornamelist=read.csv("authorname.csv",header=F, stringsAsFactors = F)[,2]
 
-result=list(authorname, list())
 
 for(i in authornamelist){
   a=1
@@ -34,7 +33,6 @@ for(i in authornamelist){
       dataframe<-rbind(dataframe, new)
     }
   }
-  result[[2]][[a]]=dataframe
-  #반드시 대괄호를 두 개 붙여줘야 리스트의 2번에 저장된 리스트에 제대로 들어감 
+  write.csv(dataframe, file=paste0(authorname[a],'.csv'))
   a=a+1
 }
